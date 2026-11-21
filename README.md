@@ -4,3 +4,5 @@ Yani kısaca bir yarışta 1 pit mi yoksa 2 pit mi yapmak daha avantajlı ve bu 
 OpenF1'den açık kaynaklı veriler çekildi. 
 Çoklu regresyon ile her lastiğin her tur ne kadar yavaşladığı tahmin edilir. 
 Monte Carlo simülasyonuyla ortalama süreler ile kıyaslanır. 
+Hava durumu, trafik gibi etkenler ilk çalışmada yer almıyor. 
+Tek yarış odaklı bir çalışma olduğundan diğer pistler ile kıyaslanamaz. 
