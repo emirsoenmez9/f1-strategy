@@ -6,9 +6,4 @@ __pycache__/
 anaconda_projects/
 Untitled*.ipynb
 data/raw/
-venv/
 .venv/
-__pycache__/
-.ipynb_checkpoints/
-.DS_Store
-anaconda_projects/

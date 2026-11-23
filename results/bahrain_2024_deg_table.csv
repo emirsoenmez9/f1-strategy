@@ -1,0 +1,4 @@
+,tahmin,SE_klasik,SE_kumelenmis,SE_orani,GA95_alt,GA95_ust
+tyre_life:C(compound)[HARD],0.11051,0.00304,0.00391,1.28613,0.10233,0.11869
+tyre_life:C(compound)[SOFT],0.12992,0.00658,0.01418,2.1538,0.10025,0.1596
+lap_number,-0.07106,0.00109,0.00266,2.435,-0.07663,-0.06549
