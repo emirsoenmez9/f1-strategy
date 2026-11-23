@@ -33,7 +33,7 @@ Model `statsmodels` ile OLS olarak kurulur. Aynı sürücünün turları birbiri
 | SOFT    | 0,130           | 0,0066      | 0,0142          | 0,100 – 0,160     |
 
 - SOFT için kümelenmiş SE klasik SE'nin yaklaşık 2,2 katıdır; klasik yöntem belirsizliği olduğundan küçük gösteriyordu.
-- Klasik standart hatalarla yapılan önceki analizde SOFT–HARD eğim farkı anlamlı bulunmuştu (`p = 0,0051`). Aynı test kümelenmiş SE ile henüz tekrarlanmadı; güven aralıkları ise büyük ölçüde örtüşüyor.
+- SOFT–HARD eğim farkı (tur başına 0,019 sn): klasik SE ile anlamlı (`p = 0,0051`), ancak aynı sürücünün turlarının birbirine bağımlılığı hesaba katılınca anlamlı değil (`p = 0,176`, %95 GA: −0,010 ile 0,048). Bu veriyle SOFT'un HARD'dan daha hızlı aştığı söylenemez; farkın olmadığı da kanıtlanmış değildir.
 - Yakıt azalması + pist evrimi: tur başına yaklaşık −0,071 sn (%95 GA: −0,077 ile −0,066).
 - Tur başına artık standart sapma: 0,459 sn
 - R² = 0,871 (sürücü etkileri dahil), n = 1024 temiz tur, 20 sürücü.

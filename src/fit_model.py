@@ -14,6 +14,7 @@ import matplotlib
 
 matplotlib.use("Agg")  # ekransız ortamda da grafik kaydedebilmek için
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
 
@@ -60,6 +61,22 @@ def main():
           "| Gözlem:", int(model.nobs),
           "| Sürücü (küme):", clean.driver_number.nunique())
     print("Tur başına artık std (sn):", round(model.scale ** 0.5, 3))
+
+    # SOFT - HARD eğim farkı testi (klasik ve kümelenmiş SE ile)
+    adlar = list(model.params.index)
+    k_soft, k_hard = "tyre_life:C(compound)[SOFT]", "tyre_life:C(compound)[HARD]"
+    if k_soft in adlar and k_hard in adlar:
+        r = np.zeros(len(adlar))
+        r[adlar.index(k_soft)] = 1
+        r[adlar.index(k_hard)] = -1
+        print("\nSOFT - HARD aşınma farkı testi (sn/tur):")
+        for ad, m in (("klasik SE", model_ols), ("kümelenmiş SE", model)):
+            tt = m.t_test(r)
+            lo, hi = np.squeeze(tt.conf_int())
+            print(f"  {ad}: fark = {float(np.squeeze(tt.effect)):.4f}, "
+                  f"SE = {float(np.squeeze(tt.sd)):.4f}, "
+                  f"p = {float(np.squeeze(tt.pvalue)):.4f}, "
+                  f"%95 GA = [{lo:.4f}, {hi:.4f}]")
 
     # Çıktılar
     RESULTS.mkdir(exist_ok=True)
